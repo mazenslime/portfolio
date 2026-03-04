@@ -1,0 +1,37 @@
+
+@import "tailwindcss";
+html{
+    scroll-behavior: smooth;
+}
+.scrolled{
+    width: 90%;
+    background-color:rgb(0, 0, 255);
+    border-radius: 50px;
+    left: 5%;
+    top: 10px;
+    color: #fff;
+    padding: 5px 20px;
+}
+.scrolled li:hover{
+    color: rgb(255, 255, 255);
+}
+.scrolled button:hover{
+    background-color:rgb(255, 255, 255);
+    color: #000;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff00;
+  border-radius: 10px;
+}
+#sub:hover{
+    color: #fff;
+}
+#sub:hover #sub2{
+    width: 0;
+    transition: width 0.3s ease-in-out;
+
+}
