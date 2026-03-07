@@ -1,7 +1,8 @@
 import React from 'react'
 import Projects from './Projects'
 
-const Work = () => {
+const Work = ({projects}) => {
+    let number = projects.length;    
     const rclick = () => {
         const container = document.getElementById('pro');
         container.scrollBy({ left: -300, behavior: 'smooth' });
@@ -20,10 +21,10 @@ const Work = () => {
         </div>
         <div className='flex flex-row justify-end w-full gap-4 mr-25 mt-20 '>
               <button className='cursor-pointer' onClick={rclick} ><i class="fa-solid fa-angle-left"></i></button>
-              <h2>4</h2>
+              <h2>{number}</h2>
               <button className='cursor-pointer' onClick={lclick} ><i class="fa-solid fa-angle-right"></i></button>
         </div>
-        <Projects/>
+        <Projects projects={projects} />
     </div>
   )
 }
