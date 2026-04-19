@@ -69,8 +69,8 @@ const Skills = () => {
     ]
   return (
     <div className='bg-gray-900 min-h-screen w-full text-white flex flex-col  justify-start items-center cursor-pointer' id='skills'>
-        <div className='px-4 py-2  mt-30 h-10 py-2 text-center w-1/10  bg-purple-500/10 rounded-4xl border-1 border-purple-600 mb-4'>
-            skills
+        <div className='text-center px-4 py-2  mt-30 h-10 py-2  bg-purple-500/10 rounded-4xl border-1 border-purple-600'>
+            My Skills
         </div>
         <p className='text-lg text-gray-300'>My skills in web applications</p>
         <div className='flex flex-row  flex-wrap justify-center items-center gap-10 mt-10'>

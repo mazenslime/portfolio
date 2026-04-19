@@ -8,13 +8,22 @@ import Work from './componant/Work'
 import Skills from './componant/Skills'
 import ContactForm from './componant/contactus'
 import Footar from './componant/Footar'
+import Start from './componant/start'
 // import images from 'assets/imges.webp'
 import weather from './assets/لقطة الشاشة 2026-02-26 171531.png'
 import landing from './assets/لقطة الشاشة 2026-02-27 000723.png'
 import ecommerce from './assets/لقطة الشاشة 2026-02-27 001650.png'
 import car from './assets/لقطة الشاشة 2026-02-27 002313.png'
+import { i } from 'motion/react-client'
 
 function App() {
+      const [Width, setWidth] = useState(window.innerWidth);
+      const [isOpen, setIsOpen] = useState(false);
+      window.addEventListener('resize', () => {
+        setWidth(window.innerWidth);
+      });
+      console.log(Width);
+      
       const projects = [
         {
             id: 1,
@@ -48,12 +57,14 @@ function App() {
   
   return (
     <>
-      <Navbar />
-      <Hero />
-      <About />
-      <Work projects={projects} />
+      <h1 className={`${Width > 600 ? 'hidden' : 'block'} cursor-pointer fixed top-4 left-2 z-1000 text-white` } onClick={() => setIsOpen(!isOpen)}>colse</h1>
+      <Navbar Width={Width} isOpen={isOpen} />
+      <Hero Width={Width} />
+      <Start />
+      <About  Width={Width}/>
+      <Work projects={projects} Width={Width} />
       <Skills />
-      <ContactForm />
+      <ContactForm Width={Width} />
       <Footar/>
     </>
   )
