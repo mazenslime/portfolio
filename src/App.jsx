@@ -57,7 +57,7 @@ function App() {
   
   return (
     <>
-      <h1 className={`${Width > 600 ? 'hidden' : 'block'} cursor-pointer fixed top-4 left-2 z-1000 text-white` } onClick={() => setIsOpen(!isOpen)}>colse</h1>
+      <h1 className={`${Width > 600 ? 'hidden' : 'block'} cursor-pointer fixed top-4 left-2 z-1000 text-white` } onClick={() => setIsOpen(!isOpen)}><i class="fa-solid fa-list"></i></h1>
       <Navbar Width={Width} isOpen={isOpen} />
       <Hero Width={Width} />
       <Start />
