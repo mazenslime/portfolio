@@ -21,9 +21,7 @@ function App() {
       const [isOpen, setIsOpen] = useState(false);
       window.addEventListener('resize', () => {
         setWidth(window.innerWidth);
-      });
-      console.log(Width);
-      
+      });      
       const projects = [
         {
             id: 1,
@@ -44,7 +42,7 @@ function App() {
             title: 'E-commerce Website',
             description: 'built with Html ,css and JavaScript,',
             image: ecommerce,
-            link: 'https://e-commerce-123456789.netlify.app/',
+            link: 'https://ecommerce-react-rose-three.vercel.app/',
         },
         {
             id: 4,
