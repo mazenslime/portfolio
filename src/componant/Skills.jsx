@@ -1,91 +1,81 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import js  from '../assets/3d-javascript-logo-design-free-png.png'
-import react  from '../assets/react.svg'
-import bootstap  from '../assets/bootstrap-logo-png_seeklogo-272883.png'
-import Mysql  from '../assets/mysql-5-logo-png-transparent.png'
-import tillwend  from '../assets/tailwind_css.png'
-import sql  from '../assets/79_sql-database-generic.494ff6320e.png'
-import Xamp from '../assets/R.png'
-import php from '../assets/php.png'
-import Python from '../assets/python-logo.png'
-import { motion } from "motion/react"
+import { motion } from 'motion/react'
+
+const skills = [
+  {
+    name: 'React.js',
+    icon: 'fa-brands fa-react',
+    description:
+      'Building reusable, scalable, and maintainable user interfaces using components, hooks, state management, routing, and API integration.',
+  },
+  {
+    name: 'Tailwind CSS',
+    icon: 'fa-solid fa-wind',
+    description:
+      'Developing responsive and customizable interfaces using utility-first CSS and reusable design patterns.',
+  },
+  {
+    name: 'Responsive Design',
+    icon: 'fa-solid fa-mobile-screen-button',
+    description:
+      'Creating interfaces that provide a consistent user experience across desktop, tablet, and mobile devices.',
+  },
+  {
+    name: 'Web Performance',
+    icon: 'fa-solid fa-gauge-high',
+    description:
+      'Improving frontend performance by optimizing rendering, loading, assets, code splitting, lazy loading, and Core Web Vitals.',
+  },
+  {
+    name: 'SEO Optimization',
+    icon: 'fa-solid fa-magnifying-glass-chart',
+    description:
+      'Improving website visibility through semantic HTML, proper metadata, page structure, performance optimization, and SEO-friendly implementation.',
+  },
+  {
+    name: 'REST API Integration',
+    icon: 'fa-solid fa-plug-circle-bolt',
+    description:
+      'Connecting frontend applications with backend services, handling API requests, responses, loading states, errors, and data management.',
+  },
+  {
+    name: 'Git & GitHub',
+    icon: 'fa-brands fa-github',
+    description:
+      'Managing source code, tracking changes, working with branches, and maintaining frontend projects using Git and GitHub.',
+  },
+  {
+    name: 'Backend Knowledge',
+    icon: 'fa-solid fa-server',
+    description:
+      'Having a solid background in PHP, Laravel, REST APIs, and MySQL, which helps me understand backend architecture, authentication, data flow, and frontend-backend communication.',
+  },
+]
+
 const Skills = () => {
-    const skills = [
-        {
-            id: 1,
-            name: 'React',
-            experience: '3 years',
-            img: react,
-        },
-        {
-            id: 2,
-            name: 'JavaScript',
-            experience: '4 years',
-            img: js,
-        },
-        {
-            id: 3,
-            name: 'Tailwind CSS',
-            experience: '5 years',
-            img: tillwend,
-        },
-        {
-            id: 4,
-            name: 'Bootstrap',
-            experience: '5 years',
-            img: bootstap,
-        },
-        {
-            id: 5,
-            name: 'MySQL',
-            experience: '2 years',
-            img: Mysql,
-        },
-        {
-            id: 6,
-            name: 'SQL',
-            experience: '2 years',
-            img: sql,
-        },
-        {
-            id: 7,
-            name: 'XAMPP',
-            experience: '2 years',
-            img: Xamp,
-        },
-        {
-            id: 8,
-            name: 'PHP',
-            experience: '1 year',
-            img: php,
-        },
-        {
-            id: 9,
-            name: 'Python',
-            experience: '1 year',
-            img: Python,
-        }
-    ]
   return (
-    <div className='bg-gray-900 min-h-screen w-full text-white flex flex-col  justify-start items-center cursor-pointer' id='skills'>
-        <div className='text-center px-4 py-2  mt-30 h-10 py-2  bg-purple-500/10 rounded-4xl border-1 border-purple-600'>
-            My Skills
-        </div>
-        <p className='text-lg text-gray-300'>My skills in web applications</p>
-        <div className='flex flex-row  flex-wrap justify-center items-center gap-10 mt-10'>
-            {skills.map((skill) => (
-                <motion.div
-                initial={{transform:'scale(0.8)', opacity: 0}}
-                whileInView={{transform:'scale(1)', opacity: 1}}
-                transition={{duration: 0.5 ,delay: skill.id * 0.1}}
-                 key={skill.id} className='w-50 h-40 bg-gray-800 rounded-lg flex flex-col  justify-center items-center'>
-                    <img className="w-20 h-16 text-blue-500 mb-2" src={skill.img} alt={skill.name} />
-                    <h3 className='text-xl font-bold text-white'>{skill.name}</h3>
-                    <p className='text-sm text-gray-300'>Experience: {skill.experience}</p>
-                </motion.div>
-            ))}
-        </div>
+    <div className='mb-10 mt-5 flex flex-col'>
+      <div className='mx-auto mt-30 mb-10 flex h-10 items-center justify-center rounded-full border border-purple-600 px-5 text-center text-white'>
+        Skills
+      </div>
+
+      <div className='flex flex-row flex-wrap items-center justify-center gap-4'>
+        {skills.map((skill, index) => (
+          <motion.div
+            key={skill.name}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: index * 0.12 + 0.5, ease: 'easeOut' }}
+            className='group h-[260px] w-[250px] rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-purple-400/60 hover:bg-purple-500/10'
+          >
+            <div className='mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/15 text-lg text-purple-300 shadow-lg shadow-purple-500/20'>
+              <i className={skill.icon} />
+            </div>
+
+            <h3 className='text-lg font-semibold text-white'>{skill.name}</h3>
+            <p className='mt-2 text-sm text-slate-300'>{skill.description}</p>
+          </motion.div>
+        ))}
+      </div>
     </div>
   )
 }

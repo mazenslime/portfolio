@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { Navbar } from './componant/Navbar'
@@ -13,9 +13,7 @@ import Start from './componant/start'
 import weather from './assets/لقطة الشاشة 2026-02-26 171531.png'
 import landing from './assets/لقطة الشاشة 2026-02-27 000723.png'
 import ecommerce from './assets/لقطة الشاشة 2026-02-27 001650.png'
-import car from './assets/لقطة الشاشة 2026-02-27 002313.png'
-import { i } from 'motion/react-client'
-
+import SplashCursor from './components/SplashCursor'
 function App() {
       const [Width, setWidth] = useState(window.innerWidth);
       const [isOpen, setIsOpen] = useState(false);
@@ -24,46 +22,67 @@ function App() {
       });      
       const projects = [
         {
-            id: 1,
-            title: 'Weather App',
-            description: 'built with Html ,css ,JavaScript and openweathermap API',
             image: weather,
+            label: 'Weather App',
             link: 'https://weather-app-i51k-ok45d0arp-mazenslimes-projects.vercel.app/',
+            description: 'built with Html ,css ,JavaScript and openweathermap API',
         },
         {
-            id: 2,
-            title: 'Landing page',
-            description: 'Bulit with react and tailwind css',
             image: landing,
+            label: 'Landing page',
             link: 'https://landing-page-123456789.netlify.app/',
+            description: 'Bulit with react and tailwind css',
         },
         {
-            id: 3,
-            title: 'E-commerce Website',
-            description: 'built with Html ,css and JavaScript,',
             image: ecommerce,
+            label: 'E-commerce Website',
             link: 'https://ecommerce-react-rose-three.vercel.app/',
-        },
-        {
-            id: 4,
-            title: 'car rental website',
-            description: 'built with Html ,css and JavaScript',
-            image: car,
-            link: 'https://car-rental-123456789.netlify.app/',
-        }
+            description: 'built with Html ,css and JavaScript,',
+          },
     ]
+
+    const Contactus=useRef(null)
+    const Aboutme=useRef(null)
+    const Workme=useRef(null)
+    const Skill=useRef(null)
+
   
   return (
     <>
-      <h1 className={`${Width > 600 ? 'hidden' : 'block'} cursor-pointer fixed top-4 left-2 z-1000 text-white` } onClick={() => setIsOpen(!isOpen)}><i class="fa-solid fa-list"></i></h1>
-      <Navbar Width={Width} isOpen={isOpen} />
-      <Hero Width={Width} />
+
+        <SplashCursor
+          DENSITY_DISSIPATION={3.5}
+          VELOCITY_DISSIPATION={2}
+          PRESSURE={0.1}
+          CURL={3}
+          SPLAT_RADIUS={0.2}
+          SPLAT_FORCE={6000}
+          COLOR_UPDATE_SPEED={10}
+          SHADING
+          RAINBOW_MODE={false}
+          COLOR="#A855F7"
+        />
+      <h1 className={`${Width > 600 ? 'hidden' : 'block'} cursor-pointer fixed top-4 left-2 z-[2001] text-white` } onClick={() => setIsOpen(!isOpen)}><i className="fa-solid fa-list"></i></h1>
+      <Navbar Width={Width} isOpen={isOpen} Workme={Workme} Skill={Skill} Aboutme={Aboutme} Contactus={Contactus}  />
       <Start />
-      <About  Width={Width}/>
-      <Work projects={projects} Width={Width} />
-      <Skills />
-      <ContactForm Width={Width} />
-      <Footar/>
+      <div
+          style={{
+            background: 'radial-gradient(circle at 50% 28%, rgba(162, 94, 255, 0.85), rgba(41, 22, 86, 0.96) 42%, rgba(4, 2, 12, 1) 100%)',
+          }}
+      >
+          <Hero Width={Width} />
+      </div>
+      <div
+      style={{
+        background: 'radial-gradient(circle at 50% 28%, rgba(41, 22, 86, 0.96) 42%, rgba(4, 2, 12, 1) 100%)',
+      }}
+      >
+      <About  Width={Width} ref={Aboutme}/>
+      <Work projects={projects} Width={Width} ref={Workme} />
+      <Skills ref={Skill}/>
+      <ContactForm Width={Width} ref={Contactus} />
+      <Footar width={Width}/>
+      </div>
     </>
   )
 }
