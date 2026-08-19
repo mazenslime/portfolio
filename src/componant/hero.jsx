@@ -1,5 +1,4 @@
 import React from 'react'
-import OPI from '../assets/OIP.webp'
 import { motion } from 'motion/react'
 import GradientWaves from '../components/GradientWaves'
 import TextType from '../components/TextType'

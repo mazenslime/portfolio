@@ -1,10 +1,5 @@
 import React, { useState } from 'react'
 import { motion } from "motion/react"
-import images from '../assets/imges.webp'
-import weather from '../assets/لقطة الشاشة 2026-02-26 171531.png'
-import landing from '../assets/لقطة الشاشة 2026-02-27 000723.png'
-import ecommerce from '../assets/لقطة الشاشة 2026-02-27 001650.png'
-import car from '../assets/لقطة الشاشة 2026-02-27 002313.png'
 import AccordionGallery from '../components/AccordionGallery'
 const Projects = ({projects}) => {
   return (
