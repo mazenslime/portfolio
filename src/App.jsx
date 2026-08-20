@@ -9,6 +9,7 @@ import ContactForm from './componant/contactus'
 import Footar from './componant/Footar'
 import Start from './componant/start'
 import SplashCursor from './components/SplashCursor'
+import { FaList } from 'react-icons/fa6'
 function App() {
       const [Width, setWidth] = useState(window.innerWidth);
       const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +40,7 @@ function App() {
           RAINBOW_MODE={false}
           COLOR="#A855F7"
         />
-      <h1 className={`${Width > 600 ? 'hidden' : 'block'} cursor-pointer fixed top-4 left-2 z-[2001] text-white` } onClick={() => setIsOpen(!isOpen)}><i className="fa-solid fa-list"></i></h1>
+      <h1 className={`${Width > 600 ? 'hidden' : 'block'} cursor-pointer fixed top-4 left-2 z-[2001] text-white` } onClick={() => setIsOpen(!isOpen)}><FaList className="text-2xl text-white" /></h1>
       <Navbar Width={Width} isOpen={isOpen} Workme={Workme} Skill={Skill} Aboutme={Aboutme} Contactus={Contactus}  />
       <Start />
       <div
