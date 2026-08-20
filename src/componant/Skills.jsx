@@ -1,55 +1,65 @@
 import { motion } from 'motion/react'
-
+import {
+  FaReact,
+  FaGithub,
+  FaWind,
+  FaMobileScreenButton,
+  FaGaugeHigh,
+  FaMagnifyingGlassChart,
+  FaPlugCircleBolt,
+  FaServer,
+} from 'react-icons/fa6'
 const skills = [
   {
     name: 'React.js',
-    icon: 'fa-brands fa-react',
+    icon: FaReact,
     description:
       'Building reusable, scalable, and maintainable user interfaces using components, hooks, state management, routing, and API integration.',
   },
   {
     name: 'Tailwind CSS',
-    icon: 'fa-solid fa-wind',
+    icon: FaWind,
     description:
       'Developing responsive and customizable interfaces using utility-first CSS and reusable design patterns.',
   },
   {
     name: 'Responsive Design',
-    icon: 'fa-solid fa-mobile-screen-button',
+    icon: FaMobileScreenButton,
     description:
       'Creating interfaces that provide a consistent user experience across desktop, tablet, and mobile devices.',
   },
   {
     name: 'Web Performance',
-    icon: 'fa-solid fa-gauge-high',
+    icon: FaGaugeHigh,
     description:
       'Improving frontend performance by optimizing rendering, loading, assets, code splitting, lazy loading, and Core Web Vitals.',
   },
   {
     name: 'SEO Optimization',
-    icon: 'fa-solid fa-magnifying-glass-chart',
+    icon: FaMagnifyingGlassChart,
     description:
       'Improving website visibility through semantic HTML, proper metadata, page structure, performance optimization, and SEO-friendly implementation.',
   },
   {
     name: 'REST API Integration',
-    icon: 'fa-solid fa-plug-circle-bolt',
+    icon: FaPlugCircleBolt,
     description:
       'Connecting frontend applications with backend services, handling API requests, responses, loading states, errors, and data management.',
   },
   {
     name: 'Git & GitHub',
-    icon: 'fa-brands fa-github',
+    icon: FaGithub,
     description:
       'Managing source code, tracking changes, working with branches, and maintaining frontend projects using Git and GitHub.',
   },
   {
     name: 'Backend Knowledge',
-    icon: 'fa-solid fa-server',
+    icon: FaServer,
     description:
       'Having a solid background in PHP, Laravel, REST APIs, and MySQL, which helps me understand backend architecture, authentication, data flow, and frontend-backend communication.',
   },
 ]
+
 
 const Skills = () => {
   return (
@@ -68,7 +78,7 @@ const Skills = () => {
             className='group h-[260px] w-[250px] rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-purple-400/60 hover:bg-purple-500/10'
           >
             <div className='mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/15 text-lg text-purple-300 shadow-lg shadow-purple-500/20'>
-              <i className={skill.icon} />
+              <skill.icon  />
             </div>
 
             <h3 className='text-lg font-semibold text-white'>{skill.name}</h3>
