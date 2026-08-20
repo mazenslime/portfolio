@@ -53,7 +53,7 @@ const skills = [
 
 const Skills = () => {
   return (
-    <div className='mb-10 mt-5 flex flex-col'>
+    <div className='mb-10 mt-5 flex flex-col' id="skill">
       <div className='mx-auto mt-30 mb-10 flex h-10 items-center justify-center rounded-full border border-purple-600 px-5 text-center text-white'>
         Skills
       </div>

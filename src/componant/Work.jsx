@@ -1,7 +1,29 @@
 import React from 'react'
 import Projects from './Projects'
-
-const Work = ({projects, Width}) => {
+import weather from '../assets/لقطة الشاشة 2026-02-26 171531.webp'
+import landing from '../assets/لقطة الشاشة 2026-02-27 000723 .webp'
+import ecommerce from '../assets/لقطة الشاشة 2026-02-27 001650.webp'
+const Work = ({Width}) => {
+        const projects = [
+        {
+            image: weather,
+            label: 'Weather App',
+            link: 'https://weather-app-i51k-ok45d0arp-mazenslimes-projects.vercel.app/',
+            description: 'built with Html ,css ,JavaScript and openweathermap API',
+        },
+        {
+            image: landing,
+            label: 'Landing page',
+            link: 'https://landing-page-123456789.netlify.app/',
+            description: 'Bulit with react and tailwind css',
+        },
+        {
+            image: ecommerce,
+            label: 'E-commerce Website',
+            link: 'https://ecommerce-react-rose-three.vercel.app/',
+            description: 'built with Html ,css and JavaScript,',
+          },
+    ]
     let number = projects.length;    
     const rclick = () => {
         const container = document.getElementById('pro');

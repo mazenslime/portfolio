@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { motion } from "motion/react"
 import AccordionGallery from '../components/AccordionGallery'
 const Projects = ({projects}) => {
   return (

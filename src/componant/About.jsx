@@ -1,6 +1,5 @@
 import React, { useRef,useEffect, useState } from 'react'
-import photo from '../assets/photo.jpg'
-import { data, datalist } from 'motion/react-client'
+import photo from '../assets/photo .webp'
 import { motion,animate,stagger } from "motion/react"
 import TextType from '../components/TextType'
 const About = ({ Width }) => {

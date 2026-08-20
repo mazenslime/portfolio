@@ -20,10 +20,9 @@ export const Navbar = ({ Width ,isOpen,Skill,Workme,Aboutme,Contactus }) => {
     className={`${Width >600 ?`flex items-center justify-between p-5 px-20 fixed w-full z-[2000]  ${isScrolled ? 'scrolled bg-#AB7BFF' : ''}`:`h-lvh w-1/2 px-4  flex flex-col justify-center items-start gap-5 bg-black text-white fixed left-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-all duration-300  z-[2000] `}`}>
         <div>
           <ul className={Width >600 ? 'flex items-center gap-5 text-white' : 'flex flex-col gap-5 text-white' }> 
-            <li className='hover:text-blue-500 transition duration-300 ease-in hover:border-be-1 border-black-500 hover:semibold ' onClick={()=>{Workme.current.foucs}}><a href="#work">Work</a></li>
-            {/* <li className='hover:text-blue-500 transition duration-300 ease-in hover:border-be-1 border-black-500 hover:semibold'><a href="#services">Services</a></li> */}
-            <li className='hover:text-blue-500 transition duration-300 ease-in hover:border-be-1 border-black-500 hover:semibold'><a href="#skills" onClick={()=>{Skill.current}}>Skills</a></li>
-            <li className='hover:text-blue-500 transition duration-300 ease-in hover:border-be-1 border-black-500 hover:semibold'><a href="#about" onClick={()=>{Aboutme.current.foucs}}>About</a></li>
+            <li className='hover:text-blue-500 transition duration-300 ease-in hover:border-B-1 border-black-500 hover:semibold ' ><a href="#work">Work</a></li>
+            <li className='hover:text-blue-500 transition duration-300 ease-in hover:border-B-1 border-black-500 hover:semibold'><a href="#skill">Skills</a></li>
+            <li className='hover:text-blue-500 transition duration-300 ease-in hover:border-B-1 border-black-500 hover:semibold'><a href="#about">About</a></li>
           </ul>
         </div>
         <motion.h2 
